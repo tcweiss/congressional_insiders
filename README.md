@@ -1,14 +1,9 @@
-## *Insider Trading in The U.S. Congress - An Empirical Analysis*
+# *Insider Trading in The U.S. Congress - An Empirical Analysis*
 
-#### Content
-1. [ Overview ](#overview)
-2. [ Code ](#code)
-3. [ Data ](#data)
 
-<br>
 <a name="overview"></a>
 
-## 1. Overview
+## Overview
 This is the online appendix for *Insider Trading in The U.S. Congress - An Empirical Analysis* (2023), a paper I wrote. On this site, you can find R code for scraping stock trades reported by members of Congress, as well as a clean dataset of congressional stock trades executed between 01/2019 and 07/2023. Details can be found below.
 
 If you would like to reuse any of the content found here, please feel free to do so. In case you republish my data, I kindly ask you to give proper credit by linking to this site. For you questions or remarks, I can be reached at tcweiss@protonmail.com.
@@ -18,7 +13,7 @@ If you would like to reuse any of the content found here, please feel free to do
 <br><br>
 
 <a name="code"></a>
-## 2. Code
+## Code
 
 ### Online
 
@@ -55,4 +50,4 @@ install.packages(c("shiny",
 ```
 
 <a name="data"></a>
-## 3. Data
+## Data
