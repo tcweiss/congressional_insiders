@@ -1,12 +1,12 @@
 ## *Insider Trading in The U.S. Congress - An Empirical Analysis*
 #### Online Appendix
 
-1. [ General Information ](#desc)
+1. [ Overview ](#overview)
 2. [ Code ](#code)
 3. [ Data ](#data)
 
 <br>
-<a name="desc"></a>
+<a name="overview"></a>
 
 ## 1. Overview
 This is the online appendix for *Insider Trading in The U.S. Congress - An Empirical Analysis*, a paper I wrote. This site contains R code for scraping stock trades reported by members of Congress, as well as a clean dataset of congressional stock trades executed between 01/2019 and 07/2023. Details can be found below.
