@@ -1,6 +1,6 @@
-## *Insider Trading in The U.S. Congress - An Empirical Analysis*
-#### Online Appendix
+## *Insider Trading in The U.S. Congress - An Empirical Analysis*: Online Appendix
 
+#### Content
 1. [ Overview ](#overview)
 2. [ Code ](#code)
 3. [ Data ](#data)
