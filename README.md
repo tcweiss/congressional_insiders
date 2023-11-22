@@ -125,7 +125,7 @@ After you scraped house trades, take a look at trades where the id and filing_st
 <a name="data"></a>
 ## Data
 
-This repo contains a cleaned-up sample of congressional stock trades executed between 01-01-2019 and 31-07-2023. I compiled it as follows:
+This repo contains a cleaned-up [sample](https://github.com/tcweiss/congressional_insiders/tree/main/data) of congressional stock trades executed between 01-01-2019 and 31-07-2023. I compiled it as follows:
 - Use the above functions to scrape all congressional trades disclosed between 2019 and 2023.
 - Drop any trades with trading date before 01-01-2019. Some trades are reported with a (sometimes massive) delay, so some of the trades disclosed in 2019 have actually been executed earlier than that.
 - Export the subset of handwritten/scanned entries that could not be scraped. Using the URLs returned by the function, I looked up all these reports on the webpages of the House and Senate and transcribed information on public stocks.
@@ -133,5 +133,6 @@ This repo contains a cleaned-up sample of congressional stock trades executed be
 - Drop all exchange transactions (that is, keep only sales and purchases). Exchanges occur as result of mergers or takeovers, in which case a persons's shares in company A are automatically converted to a certain amount of shares in company B. I dropped them since 1) they only accounted for some ~ 0.02% of all transactions, 2) it is not straightforward how to incorporate them in portfolio-based analyses, and 3) they do not occur on initiative of the filer, so they are unlikely to reflect any potential insider trading practices. 
 - Look up all unique assets in Refiniv Eikon. Some assets are mistakenly marked as public stocks but are actually some other asset (e.g. ETFs, bonds, options, etc). Since I only focus on stocks, these are dropped. Sometimes companies are renamed, in which case the stock and the ticker may trade under a different name today than at the point of disclosure. In these cases, the old stock's name and ticker are replaced with the current (July/August 2023) version. Since different people often list the same stock in different ways, also standardized all stocks' names, (e.g. "Berkshire Hathaway B", "Berkshire Class B", "Berkshire Hathaway" are all renamed to "Berkshire Hathaway - Class B").
 - Finally, I slightly adjusted the names of politicians to be in line with those listed in other databases (e.g. "Jim Inhofe" was changed to "James M Inhofe"). This means first and middle names might be differnt from those in reports. 
+
 
 
