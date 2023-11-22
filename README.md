@@ -70,6 +70,8 @@ If a report does not contain stock trades, the function does not return anything
 
 <br>
 
+### `scrape_house_year()`
+
 To scrape all House trades filed in a given year, you can use `scrape_house_year()`. The only argument is the year:
 
 ```
@@ -84,6 +86,8 @@ The exact runtime depends on your internet connection, but I would expect about 
 - doc_link: URL linking to the concerning report on the House webpage
 
 <br><br>
+
+### `scrape_senate_year()`
 
 The Senate publishes PTRs on [this](https://efdsearch.senate.gov/search/) page. This is a non-static webpage and the URL do not follow some predictable pattern as for the House, meaning that the scraping approach also works differently. To scrape all Senate trades filed over a certain period, use `scrape_senate_year()`. The arguments are the starting and ending date (format MM/DD/YYYY) and a version of Chromedriver that matches your installed version of Chrome:
 
