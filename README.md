@@ -48,7 +48,7 @@ Scraping the Senate webpage additionally requires [Google Chrome](https://www.go
 
 #### `scrape_house()`
 
-Congressional stock trades can be found in *periodic transaction reports* (PTRs). The House publishes them [here](https://disclosures-clerk.house.gov/FinancialDisclosure). You can extract all stock trades from a PTR using `scrape_house()`. The only argument is the URL pointing the PTR (or the path, if you saved the file saved locally):
+Congressional stock trades can be found in *periodic transaction reports* (PTRs). The House of representatives publishes them as PDFs [here](https://disclosures-clerk.house.gov/FinancialDisclosure). To extract all public stock trades from a PTR, use `scrape_house()`. The only argument is the URL pointing the PTR (or the path, if you saved the file saved locally):
 
 ```
 url <- 'https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20020393.pdf'
