@@ -22,7 +22,7 @@ This repo contains three R functions for scraping congressional stock trades:
 
 <br>
 
-In order to use these functions, make sure to have all dependencies installed by running:
+To use these functions, make sure to have all dependencies installed:
 
 ```
 install.packages(c("tidyverse",                
