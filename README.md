@@ -124,3 +124,5 @@ After you scraped house trades, take a look at trades where the id and filing_st
 
 <a name="data"></a>
 ## Data
+
+In the data folder of this repo, you can find
