@@ -98,7 +98,6 @@ scrape_senate_year(start_date = '01/01/2019', end_date = '12/31/2019', chromedri
 
 Running this function will open a window in Google chrome. Since the function automatically controls the window, make sure not to close it until it has run. Scraping a window of one year takes about the same time as for the House. The function will return a tibble with the following variables
 
-
 - name: Name of the filer
 - disclosure_date: Day on which the trade was disclosed
 - transaction_date: Day on which the trade was executed
@@ -109,6 +108,13 @@ Running this function will open a window in Google chrome. Since the function au
 - amount: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
 - comment: Any comments the filer has added. If no comments, this will be empty.
 - doc_link: URL linking to the concerning report on the House webpage
+
+
+### Remarks
+
+Note that unlike for the House, there is no id/filing_status variables. The Senate webpage makes it easy to identify past trades to which an amendment refers, so the function automatically keeps only the most recent version of a trade that was amended (and it drops trades that were deleted). For the House, you need to needs to be done manually. 
+
+After you scraped house trades, you should take a look at trades where the id and filing_status variables are not empty. These refer to previously filed trades that were erroneous (and the amended entry is the corrected version) or they refer to previously filed trades that were mistakenly added (and should not have been reported in the first place). The problem is that there is no way to automatically identify the previously filed trade. To identify it, look for trades in the same stock, by the same person, as some earlier date than the trade that was marked as amended or deleted. For amendments, you should then drop the original trade and only keep the trade marked as amended. For deletions, you should drop both the original trade and the one marked as deletion.
 
 
 
