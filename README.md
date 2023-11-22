@@ -44,7 +44,7 @@ Scraping the Senate webpage additionally requires [Google Chrome](https://www.go
 
 <br>
 
-### `scrape_house()`
+#### `scrape_house()`
 
 Congressional stock trades can be found in *periodic transaction reports* (PTRs). The House publishes them [here](https://disclosures-clerk.house.gov/FinancialDisclosure). You can extract all stock trades from a PTR using `scrape_house()`. The only argument is the URL pointing the PTR (or the path, if you saved the file saved locally):
 
@@ -71,7 +71,7 @@ If a report does not contain stock trades, the function does not return anything
 
 <br><br>
 
-### `scrape_house_year()`
+#### `scrape_house_year()`
 
 To scrape all House trades filed in a given year, you can use `scrape_house_year()`. The only argument is the year:
 
@@ -88,7 +88,7 @@ The exact runtime depends on your internet connection, but I would expect about 
 
 <br><br>
 
-### `scrape_senate_year()`
+#### `scrape_senate_year()`
 
 The Senate publishes PTRs on [this](https://efdsearch.senate.gov/search/) page. This is a non-static webpage and the URL do not follow some predictable pattern as for the House, meaning that the scraping approach also works differently. To scrape all Senate trades filed over a certain period, use `scrape_senate_year()`. The arguments are the starting and ending date (format MM/DD/YYYY) and a version of Chromedriver that matches your installed version of Chrome:
 
@@ -114,7 +114,7 @@ Running this function will open a window in Google chrome. Since the function au
 
 <br><br>
 
-### Remarks
+#### Remarks
 
 Note that unlike for the House, the Senate function returns no id/filing_status variables. Due to the way the trades are reported, it is possible to automatically correct for amended or deleted trades by the Senate - the function does that automatically. For the House, you must do it yourself. 
 
