@@ -20,7 +20,7 @@ I wrote three R functions that can be used to scrape congressional stock trades:
 - `scrape_house_year()` scrapes trades of House members from all reports filed in a given year
 - `scrape_senate_year()` scrapes trades of Senate members for a specified starting and ending date
 
-First, make sure to have all dependencies installed by running the following code:
+In order to use these functions, make sure to have all dependencies installed by running:
 
 ```
 install.packages(c("tidyverse",                
@@ -36,7 +36,7 @@ install.packages(c("tidyverse",
                    "netstat"))
 ```
 
-Scraping the Senate webpage also requires Google Chrome and Chromedriver. Make sure that your version of Chromedriver matches the version of Google Chrome installed on your machine. Finally, run code.R contained in this repo to load all functions into your session.
+Scraping the Senate webpage also requires Google Chrome and Chromedriver. Make sure that your version of Chromedriver matches the version of Google Chrome installed on your machine. To load the three functions into you session, run code.R contained in this repo.
 
 ### Usage
 
