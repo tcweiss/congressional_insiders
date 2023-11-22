@@ -101,7 +101,7 @@ scrape_senate_year(start_date = '01/01/2019', end_date = '12/31/2019', chromedri
 
 <br>
 
-Running this function will open a window in Google chrome. Since the function automatically controls the window, make sure not to close it until it has run. Scraping a window of one year takes about the same time as for the House. The function will return a tibble with the following variables
+Running this function will open a window in Google chrome. The function automatically controls the window, so do not close it until it the function has run. Scraping a period of one year should take less time than for the House. The function will return a tibble with the following variables
 
 - *name*: Name of the filer
 - *disclosure_date*: Day on which the trade was disclosed
