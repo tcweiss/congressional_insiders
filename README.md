@@ -44,9 +44,9 @@ Scraping the Senate webpage additionally requires [Google Chrome](https://www.go
 
 <br>
 
-### scrape_house()
+### Usage
 
-Congressional stock trades can be found in *periodic transaction reports* (PTRs). The House publishes PTRs on [this](https://disclosures-clerk.house.gov/FinancialDisclosure) page. If you have the URL pointing to and individual report, you can extract all stock trades using `scrape_house()`:
+Congressional stock trades can be found in *periodic transaction reports* (PTRs). The House publishes PTRs on [this](https://disclosures-clerk.house.gov/FinancialDisclosure) page. You can extract all stock trades from a PTR using `scrape_house()`. The only argument is the URL pointing the PTR (or the path, if you saved the file saved locally):
 
 ```
 url <- 'https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20020393.pdf'
@@ -54,7 +54,7 @@ scrape_house(url)
 
 ```
 
-The argument can also be a path pointing to a locally saved version of the report (wrapped in quotes). The function returns a tibble with the following variables:
+The function returns a tibble with the following variables:
 - owner: Indicates the owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC)
 - asset: Name of the asset. For report filed from 2019 onwards, reports contain asset type abbreviations, so the functions automatically extracts stocks only. For reports filed before 2019, there are no abbreviations and the function extracts all assets.
 - is_stock: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
@@ -66,6 +66,27 @@ The argument can also be a path pointing to a locally saved version of the repor
 - id: If the trade was reported at an earlier date already, filers can amend or delete it. In this case, there will be an id (without further meaning). If the trade was reported for the first time, this will be empty.
 - filing_status: If the trade was reported at an earlier date already, this indicates the reason why the trade is filed again (amendment or deletion). If the trade was reported for the first time, this will be empty.
 
+
+<br>
+
+To scrape all House trades filed in a given year, you can use `scrape_house_year()`. The only argument is the year:
+
+```
+scrape_house_year('2022')
+
+```
+
+The exact runtime depends on your internet connection, but I would expect about 1-2h per year. The function returns a tibble with the following variables:
+- owner: Indicates the owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC)
+- asset: Name of the asset. For report filed from 2019 onwards, reports contain asset type abbreviations, so the functions automatically extracts stocks only. For reports filed before 2019, there are no abbreviations and the function extracts all assets.
+- is_stock: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
+- ticker: Ticker of the asset.
+- type: Sale (S), purchase (P), or exchange (E).
+- transaction_date: Day on which the trade was executed.
+- amount: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
+- comment: Any comments the filer has added. If no comments, this will be empty.
+- id: If the trade was reported at an earlier date already, filers can amend or delete it. In this case, there will be an id (without further meaning). If the trade was reported for the first time, this will be empty.
+- filing_status: If the trade was reported at an earlier date already, this indicates the reason why the trade is filed again (amendment or deletion). If the trade was reported for the first time, this will be empty.
 
 
 
