@@ -75,7 +75,7 @@ If a report does not contain stock trades, the function does not return anything
 
 #### `scrape_house_year()`
 
-To scrape all House trades filed in a given year, you can use `scrape_house_year()`. The only argument is the year:
+To scrape all House trades filed in a given year, use `scrape_house_year()`. The only argument is the year of disclosure:
 
 ```
 scrape_house_year(2022)
