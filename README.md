@@ -116,41 +116,11 @@ Running this function will open a window in Google chrome. Since the function au
 
 ### Remarks
 
-Note that unlike for the House, there is no id/filing_status variables. The Senate webpage makes it easy to identify past trades to which an amendment refers, so the function automatically keeps only the most recent version of a trade that was amended (and it drops trades that were deleted). For the House, you need to needs to be done manually. 
+Note that unlike for the House, the Senate function returns no id/filing_status variables. Due to the way the trades are reported, it is possible to automatically correct for amended or deleted trades by the Senate - the function does that automatically. For the House, you must do it yourself. 
 
-After you scraped house trades, you should take a look at trades where the id and filing_status variables are not empty. These refer to previously filed trades that were erroneous (and the amended entry is the corrected version) or they refer to previously filed trades that were mistakenly added (and should not have been reported in the first place). The problem is that there is no way to automatically identify the previously filed trade. To identify it, look for trades in the same stock, by the same person, as some earlier date than the trade that was marked as amended or deleted. For amendments, you should then drop the original trade and only keep the trade marked as amended. For deletions, you should drop both the original trade and the one marked as deletion.
+After you scraped house trades, take a look at trades where the id and filing_status variables are not empty. These refer to previously filed trades that were erroneous (and the amended entry is the corrected version) or they refer to previously filed trades that were mistakenly reported (and should not have been reported in the first place). Unfortunately, there is no way to automatically identify the previously filed trade these amendments or deletions refer to. To identify it, look for trades in the same stock, by the same person, as some earlier date than the trade that was marked as amended or deleted. For amendments, you should then drop the original trade and only keep the trade marked as amended. For deletions, you should drop both the original trade and the one marked as deletion.
 
-
-
-<a name="data"></a>
-
-
-### Locally
-
-Alternatively, you can also run the app locally. This requires the following programs:
-- R version 4.2.0: https://cran.rstudio.com 
-- RStudio: https://www.rstudio.com/products/rstudio/download/
-- Required libraries: ```shiny``` ```shinyWidgets``` ```shinythemes``` ```PerformanceAnalytics``` ```PortfolioAnalytics``` ```tidyquant``` ```tidyverse``` ```magrittr``` ```reactable``` ```arrow``` ```bslib``` ```qs``` ```timetk``` ```dygraphs``` ```rvest```
-
-In order to properly use our "Investing@HSG"-App, it is essential to have installed the above listed libraries prior to running this program. To install all libraries, run the following code in your R console:
-
-```
-install.packages(c("shiny",                
-                   "shinyWidgets",        
-                   "shinythemes",          
-                   "bslib",                
-                   "PerformanceAnalytics", 
-                   "PortfolioAnalytics",
-                   "tidyquant",
-                   "tidyverse",
-                   "magrittr",
-                   "reactable",
-                   "arrow",
-                   "qs",
-                   "timetk",
-                   "dygraphs",
-                   "rvest"))
-```
+<br><br>
 
 <a name="data"></a>
 ## Data
