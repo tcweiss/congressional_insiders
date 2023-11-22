@@ -60,13 +60,13 @@ The function returns a tibble with the following variables:
 - *owner*: Owner of the brokerage account. This is either the politician, their spouse (SP), a dependent child (DC), or it's a joint account (JT).
 - *asset*: Name of the asset. Reports disclosed 2019 or later abbreviations indicating the asset type, so the functions will automatically extracts public stocks only. For reports filed before 2019, there are no abbreviations and the function will returns trades of involving any asset type.
 - *is_stock*: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
-- *ticker*: Ticker of the asset.
+- *ticker*: Ticker under which the asset trades.
 - *type*: Sale (S), purchase (P), or exchange (E).
 - *transaction_date*: Day on which the trade was executed.
-- *amount*: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
-- *comment*: Any comments the filer has added. If no comments, this will be empty.
-- *id*: If the trade was reported at an earlier date already, filers can amend or delete it. In this case, there will be an id (without further meaning). If the trade was reported for the first time, this will be empty.
-- *filing_status*: If the trade was reported at an earlier date already, this indicates the reason why the trade is filed again (amendment or deletion). If the trade was reported for the first time, this will be empty.
+- *amount*: Amount range for the value of the trade. If exact amount was reported, this contains the exact amount.
+- *comment*: Any comments the filer has added. If no comments were added, this is empty.
+- *id*: If a trade was already reported at some point, filers can amend or delete it by listing it again in a later report and marking it accordingly. In this case, the transaction will shows up again on a later report and is accompanies by an id (more details below). If the trade was reported for the first time, this will be empty.
+- *filing_status*: If the trade was filed again has an id, this variables indicates specifies the reason why the trade is filed again (Amended/Deleted). If the trade was reported for the first time, this will be empty.
 
 <br>
 If a report does not contain stock trades, the function does not return anything. If the report was handwritten and scanned, it will return a tibble with one row and the entry HANDWRITTEN for all variables.
