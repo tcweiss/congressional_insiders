@@ -127,7 +127,7 @@ After you scraped house trades, take a look at trades where the id and filing_st
 <a name="data"></a>
 ## Data
 
-This repo contains a cleaned-up [sample](https://github.com/tcweiss/congressional_insiders/tree/main/data) of congressional stock trades executed between 01-01-2019 and 31-07-2023. I compiled it as follows:
+This repo contains a cleaned-up [sample](https://github.com/tcweiss/congressional_insiders/tree/main/data) of congressional stock I compiled, cover all congressional trades of public stocks executed between 01-01-2019 and 31-07-2023. It was created as follows:
 1) Use the above functions to scrape all congressional trades disclosed between 2019 and 2023.
 2) Drop any trades with trading date before 01-01-2019. Some trades are reported with a (sometimes massive) delay, so some of the trades disclosed in 2019 have actually been executed earlier than that.
 3) Export the subset of handwritten/scanned entries that could not be scraped. Using the URLs returned by the function, I looked up all these reports on the webpages of the House and Senate and transcribed information on public stocks.
