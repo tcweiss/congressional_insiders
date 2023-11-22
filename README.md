@@ -66,9 +66,10 @@ The function returns a tibble with the following variables:
 - id: If the trade was reported at an earlier date already, filers can amend or delete it. In this case, there will be an id (without further meaning). If the trade was reported for the first time, this will be empty.
 - filing_status: If the trade was reported at an earlier date already, this indicates the reason why the trade is filed again (amendment or deletion). If the trade was reported for the first time, this will be empty.
 
+<br>
 If a report does not contain stock trades, the function does not return anything. If the report was handwritten and scanned, it will return a tibble with one row and the entry HANDWRITTEN for all variables.
 
-<br>
+<br><br>
 
 ### `scrape_house_year()`
 
@@ -96,6 +97,8 @@ scrape_senate_year(start_date = '01/01/2019', end_date = '12/31/2019', chromedri
 
 ```
 
+<br>
+
 Running this function will open a window in Google chrome. Since the function automatically controls the window, make sure not to close it until it has run. Scraping a window of one year takes about the same time as for the House. The function will return a tibble with the following variables
 
 - name: Name of the filer
@@ -109,6 +112,7 @@ Running this function will open a window in Google chrome. Since the function au
 - comment: Any comments the filer has added. If no comments, this will be empty.
 - doc_link: URL linking to the concerning report on the House webpage
 
+<br><br>
 
 ### Remarks
 
