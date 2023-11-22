@@ -66,29 +66,34 @@ The function returns a tibble with the following variables:
 - id: If the trade was reported at an earlier date already, filers can amend or delete it. In this case, there will be an id (without further meaning). If the trade was reported for the first time, this will be empty.
 - filing_status: If the trade was reported at an earlier date already, this indicates the reason why the trade is filed again (amendment or deletion). If the trade was reported for the first time, this will be empty.
 
+If a report does not contain stock trades, the function does not return anything. If the report was handwritten and scanned, it will return a tibble with one row and the entry HANDWRITTEN for all variables.
 
 <br>
 
 To scrape all House trades filed in a given year, you can use `scrape_house_year()`. The only argument is the year:
 
 ```
-scrape_house_year('2022')
+scrape_house_year(2022)
 
 ```
 
-The exact runtime depends on your internet connection, but I would expect about 1-2h per year. The function returns a tibble with the following variables:
-- owner: Indicates the owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC)
-- asset: Name of the asset. For report filed from 2019 onwards, reports contain asset type abbreviations, so the functions automatically extracts stocks only. For reports filed before 2019, there are no abbreviations and the function extracts all assets.
-- is_stock: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
-- ticker: Ticker of the asset.
-- type: Sale (S), purchase (P), or exchange (E).
-- transaction_date: Day on which the trade was executed.
-- amount: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
-- comment: Any comments the filer has added. If no comments, this will be empty.
-- id: If the trade was reported at an earlier date already, filers can amend or delete it. In this case, there will be an id (without further meaning). If the trade was reported for the first time, this will be empty.
-- filing_status: If the trade was reported at an earlier date already, this indicates the reason why the trade is filed again (amendment or deletion). If the trade was reported for the first time, this will be empty.
+The exact runtime depends on your internet connection, but I would expect about 1-2h. The function returns a tibble with the same variables as `scrape_house()`, as well as the following four variables:
+- name: Name of the filer
+- district: Political district of the filer
+- disclosure_date: Date the trade was disclosed
+- doc_link: URL linking to the concerning report on the House webpage
 
+<br><br>
 
+The Senate publishes PTRs on [this](https://efdsearch.senate.gov/search/) page. This is a non-static webpage and the URL do not follow some predictable pattern as for the House, meaning that the scraping approach also works differently. To scrape all Senate trades filed over a certain period, use `scrape_senate_year()`. The arguments are the starting and ending date (format MM/DD/YYYY) and a version of Chromedriver that matches your installed version of Chrome:
+
+```
+scrape_senate_year(start_date = '01/01/2019', end_date = '12/31/2019', chromedriver = '119.0.6045.159')
+
+```
+
+Running this function will open a window in Google chrome. Since the function automatically controls the window, make sure not to close it until it has run. Scraping a window of one year takes about the same time as for the House. The function will return a tibble with the following variables:
+- 
 
 
 <a name="data"></a>
