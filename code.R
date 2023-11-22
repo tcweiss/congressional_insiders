@@ -887,8 +887,7 @@ scrape_house_all <- function(year) {
   unzip(filename)
   
   # Import text file contained in zip, remove honorary prefix and subset to filing
-  # types containing stock transactions (O for annual financial disclosure report,
-  # P for periodic transaction report following transactions during year).
+  # types containing stock transactions (P for periodic transaction reports).
   docs <- read_delim(paste0(year, "FD.txt"), 
                      delim = "\t", 
                      escape_double = FALSE, 
