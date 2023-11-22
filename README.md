@@ -38,7 +38,9 @@ install.packages(c("tidyverse",
                    "netstat"))
 ```
 
-Scraping the Senate webpage additionally requires Google Chrome and Chromedriver. Make sure that your version of Chromedriver matches the version of Google Chrome installed on your machine. To load the three functions into you session, run code.R contained in this repo.
+Scraping the Senate webpage additionally requires [Google Chrome](https://www.google.com/chrome/) and [Chromedriver](https://chromedriver.chromium.org/home). Make sure that your version of Chromedriver matches the version of Google Chrome installed on your machine. To load the three functions into you session, run code.R contained in this repo.
+
+
 
 <br>
 
