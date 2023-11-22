@@ -15,11 +15,37 @@ If you would like to reuse any of the content found here, please feel free to do
 <a name="code"></a>
 ## Code
 
-### Online
+I wrote three R functions that can be used to scrape congressional stock trades:
+- ´scrape_house()´ scrapes trades of House members from an individual report
+- ´scrape_house_year()´ scrapes trades of House members from all reports filed in a given year
+- ´scrape_senate_year()´ scrapes trades of Senate members for a specified starting and ending date
 
-Since I deployed the web-app online, all you need is an internet connection. For best results, I recommend opening the app on a screen with at least 13''. Note that it may take a few second for the program to run. 
+First, make sure to have all dependencies installed by running the following code:
 
-Link to app: [Investing@HSG](https://thomas-weiss.shinyapps.io/investing_at_hsg/)
+```
+install.packages(c("tidyverse",                
+                   "magrittr",        
+                   "pdftools",          
+                   "janitor",                
+                   "rvest", 
+                   "jsonlite",
+                   "htmltools",
+                   "utils",
+                   "RSelenium",
+                   "xml2",
+                   "netstat"))
+```
+
+Scraping the Senate webpage also requires Google Chrome and Chromedriver. Make sure that your version of Chromedriver matches the version of Google Chrome installed on your machine. Finally, run code.R contained in this repo to load all functions into your session.
+
+### Usage
+
+Congressional stock trades can be found in *periodic transaction reports* (PTRs). The House publishes PTRs on this page
+
+
+https://disclosures-clerk.house.gov/FinancialDisclosure
+
+<a name="data"></a>
 
 
 ### Locally
