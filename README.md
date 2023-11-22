@@ -18,7 +18,7 @@ If you would like to reuse any of the content found here, please feel free to do
 This repo contains three R functions for scraping congressional stock trades:
 - `scrape_house()` scrapes trades of a Representative from an individual report
 - `scrape_house_year()` scrapes trades of all Representatives from all reports filed in a given year
-- `scrape_senate_year()` scrapes trades of all Senators between a specified starting and ending date
+- `scrape_senate_year()` scrapes trades of all Senators filed between a starting and ending date
 
 <br>
 
