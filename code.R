@@ -1182,8 +1182,7 @@ scrape_senate_all <- function(start_date, end_date, driver) {
   }
   
   # Drop refer_date and amendment, make sure all variables are clean, include only
-  # stocks and files which haven't been transcribed yet, remove exchange
-  # transactions and non-stock assets.
+  # stocks and handwritten reports, remove exchange transactions and non-stock assets.
   trades %<>%
     select(-c(refer_date, amendment)) %>% 
     mutate(disclosure_date = as.Date(disclosure_date, format = "%m/%d/%Y"),
