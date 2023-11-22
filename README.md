@@ -57,7 +57,7 @@ scrape_house(url)
 ```
 
 The function returns a tibble with the following variables:
-- *owner*: Owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC).
+- *owner*: Owner of the brokerage account. This is either the politician, their spouse (SP), a dependent child (DC), or it's a joint account (JT).
 - *asset*: Name of the asset. For report filed from 2019 onwards, reports contain asset type abbreviations, so the functions automatically extracts stocks only. For reports filed before 2019, there are no abbreviations and the function extracts all assets.
 - *is_stock*: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
 - *ticker*: Ticker of the asset.
