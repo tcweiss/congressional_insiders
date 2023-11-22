@@ -55,7 +55,7 @@ scrape_house(url)
 ```
 
 The function returns a tibble with the following variables:
-- owner: Indicates the owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC)
+- owner: Owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC).
 - asset: Name of the asset. For report filed from 2019 onwards, reports contain asset type abbreviations, so the functions automatically extracts stocks only. For reports filed before 2019, there are no abbreviations and the function extracts all assets.
 - is_stock: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
 - ticker: Ticker of the asset.
@@ -96,8 +96,20 @@ scrape_senate_year(start_date = '01/01/2019', end_date = '12/31/2019', chromedri
 
 ```
 
-Running this function will open a window in Google chrome. Since the function automatically controls the window, make sure not to close it until it has run. Scraping a window of one year takes about the same time as for the House. The function will return a tibble with the following variables:
-- 
+Running this function will open a window in Google chrome. Since the function automatically controls the window, make sure not to close it until it has run. Scraping a window of one year takes about the same time as for the House. The function will return a tibble with the following variables
+
+
+- name: Name of the filer
+- disclosure_date: Day on which the trade was disclosed
+- transaction_date: Day on which the trade was executed
+- owner: Owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC).
+- asset: Name of the stock
+- ticker: Ticker of the stock
+- type: Sale (S), purchase (P), or exchange (E)
+- amount: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
+- comment: Any comments the filer has added. If no comments, this will be empty.
+- doc_link: URL linking to the concerning report on the House webpage
+
 
 
 <a name="data"></a>
