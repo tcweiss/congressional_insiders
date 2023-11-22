@@ -120,9 +120,9 @@ Running this function will open a window in Google chrome that interacts with th
 
 #### Remarks
 
-Note that unlike for the House, the Senate function returns no id/filing_status variables. Due to the way the trades are reported, it is possible to automatically correct for amended or deleted trades by the Senate - the function does that automatically. For the House, you must do it yourself. 
+Note that unlike for the House, the Senate function returns no id or filing_status variable. Due to the way the trades are reported, it is possible to automatically correct for amended or deleted trades by the Senate - the function does that automatically. For the House, you must do it yourself. 
 
-After you scraped house trades, take a look at trades where the id and filing_status variables are not empty. These refer to previously filed trades that were erroneous (and the amended entry is the corrected version) or they refer to previously filed trades that were mistakenly reported (and should not have been reported in the first place). Unfortunately, there is no way to automatically identify the previously filed trade these amendments or deletions refer to. To identify it, look for trades in the same stock, by the same person, as some earlier date than the trade that was marked as amended or deleted. For amendments, you should then drop the original trade and only keep the trade marked as amended. For deletions, you should drop both the original trade and the one marked as deletion.
+After scraping House trades, look at all trades where the id and filing_status variables are not empty. These refer to previously filed trades that were erroneous (and the trade marked a 'Amended' in a later report show a corrected version) or they refer to previously filed trades that were mistakenly reported (and should not have been reported in the first place). Look for trades of the same stock, by the same person, and the same transaction date, but which was filed at some earlier point than the trade that was marked as amended/deleted. For trades where 'filing_status' is 'Amended', one should then drop the original trade and only keep the trade marked as amended. For deletions, both the original trade and the subsequent one where 'filing_status' shows 'Deleted' must be dropped.
 
 <br><br>
 
