@@ -40,7 +40,7 @@ install.packages(c("tidyverse",
 
 <br>
 
-Scraping the Senate webpage additionally requires [Google Chrome](https://www.google.com/chrome/) and [Chromedriver](https://chromedriver.chromium.org/home). It is important that version of Chromedriver matches the version of Google Chrome installed on your machine. To load the three functions into you session, run [code.R](https://github.com/tcweiss/congressional_insiders/blob/main/code.R).
+Scraping the Senate webpage additionally requires [Google Chrome](https://www.google.com/chrome/) and [Chromedriver](https://chromedriver.chromium.org/home). It is important that version of Chromedriver matches the version of Google Chrome installed on your machine. To load the three functions into you session, run [code.R](https://github.com/tcweiss/congressional_insiders/blob/main/code.R). Details on usage are provided below.
 
 
 
