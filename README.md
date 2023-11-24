@@ -92,7 +92,7 @@ The exact runtime depends on your internet connection, but I would expect about 
 
 #### `scrape_senate_all()`
 
-The Senate publishes PTRs on [this](https://efdsearch.senate.gov/search/) page. This is a non-static webpage, and the URL do not follow a predictable pattern as in the House, so the scraping approach works differently. To scrape all Senate trades filed over a certain period, use `scrape_senate_year()`. The arguments are the starting and ending date (format MM/DD/YYYY) and a version of Chromedriver that matches your installed version of Chrome:
+The Senate publishes PTRs on [this](https://efdsearch.senate.gov/search/) page. This is a non-static webpage, and the URLs do not follow a predictable pattern as in the House, so the scraping approach works differently. To scrape all Senate trades filed over a certain period, use `scrape_senate_year()`. The arguments are the starting and ending date (format MM/DD/YYYY) and a version of Chromedriver that matches your installed version of Chrome:
 
 ```
 scrape_senate_year(start_date = '01/01/2019',
