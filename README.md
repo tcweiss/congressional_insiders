@@ -75,7 +75,7 @@ If a report does not contain stock trades, the function does not return anything
 
 #### `scrape_house_all()`
 
-To scrape trades from all PTRs filed by the House in a given year, use `scrape_house_year()`. The only argument is the year of disclosure:
+To scrape all House trades disclosed in given year, use `scrape_house_year()`. The only argument is the year of disclosure:
 
 ```
 house_2022 <- scrape_house_all(2022)
