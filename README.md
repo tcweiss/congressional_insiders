@@ -114,7 +114,7 @@ Running this function will open a window in Google Chrome that interacts with th
 - *type*: Sale (S), purchase (P), or exchange (E)
 - *amount*: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
 - *comment*: Any comments the filer has added. If no comments, this will be empty.
-- *doc_link*: URL linking to the concerning report on the House webpage
+- *doc_link*: URL linking to the concerning report on the Senate webpage
 
 <br><br>
 
