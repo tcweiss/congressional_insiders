@@ -103,7 +103,7 @@ senate_2022
 
 <br>
 
-Running this function will open a window in Google Chrome that interacts with the Senate's webpage. The window is controlled by the function, so do not close it until it the function has completed running. Scraping a period of one year should take less time than for the House. The output will be a tibble with the following variables
+Running this function will open a window in Google Chrome that interacts with the Senate's webpage. The window is controlled by the function, so do not close it until it the function has completed running. Scraping a period of one year should take less time than for the House. The output will be a tibble with the following variables:
 
 - *name*: Name of the filer
 - *disclosure_date*: Day on which the trade was disclosed
