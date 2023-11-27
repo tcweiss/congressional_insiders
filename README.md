@@ -57,7 +57,7 @@ scrape_house(url)
 ```
 
 The function returns a tibble with the following variables:
-- *owner*: Owner of the brokerage account. This is either the politician, their spouse (SP), a dependent child (DC), or it's a joint account (JT).
+- *owner*: Owner of the brokerage account. This is either the filer, their spouse (SP), a dependent child (DC), or it's a joint account (JT).
 - *asset*: Name of the asset. Reports disclosed 2019 or later abbreviations indicating the asset type, and the function automatically extract public stocks only. For reports filed before 2019, there are no abbreviations and the function will returns trades of involving any asset type.
 - *is_stock*: Indicates if the asset is known to be a stock (Yes), or whether it may be some other asset (?).
 - *ticker*: Ticker under which the asset trades.
@@ -108,7 +108,7 @@ Running this function will open a window in Google Chrome that interacts with th
 - *name*: Name of the filer
 - *disclosure_date*: Day on which the trade was disclosed
 - *transaction_date*: Day on which the trade was executed
-- *owner*: Owner of the brokerage account. Can be the member, their spouse (SP), a joint account (JT), or their dependent child (DC).
+- *owner*: Owner of the brokerage account. This is either the filer, their spouse (SP), a dependent child (DC), or it's a joint account (JT).
 - *asset*: Name of the stock
 - *ticker*: Ticker of the stock
 - *type*: Sale (S), purchase (P), or exchange (E)
