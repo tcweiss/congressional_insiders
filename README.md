@@ -86,7 +86,7 @@ The exact runtime depends on your internet connection, but you should expect abo
 - *name*: Name of the filer
 - *district*: Political district of the filer
 - *disclosure_date*: Date the trade was disclosed
-- *doc_link*: URL linking to the concerning report on the House webpage
+- *doc_link*: URL linking to the report in which the trade was disclosed
 
 <br><br>
 
@@ -114,7 +114,7 @@ Running this function will open a window in Google Chrome that interacts with th
 - *type*: Sale (S), purchase (P), or exchange (E)
 - *amount*: Amount range for the value of the trade. If exact amount was reported, this will be the exact amount.
 - *comment*: Any comments the filer has added. If no comments, this will be empty.
-- *doc_link*: URL linking to the concerning report on the Senate webpage
+- *doc_link*: URL linking to the report in which the trade was disclosed
 
 <br><br>
 
