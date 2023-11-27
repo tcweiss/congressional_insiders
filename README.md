@@ -78,7 +78,7 @@ If a report does not contain stock trades, the function does not return anything
 To scrape all House trades filed in a given year, use `scrape_house_year()`. The only argument is the year of disclosure:
 
 ```
-house_2022 <- scrape_house_year(2022)
+house_2022 <- scrape_house_all(2022)
 house_2022
 ```
 
@@ -95,9 +95,9 @@ The exact runtime depends on your internet connection, but you should expect abo
 The Senate publishes PTRs on [this](https://efdsearch.senate.gov/search/) page. This is a non-static webpage, and the URLs do not follow a predictable pattern as in the House, so the scraping approach works differently. To scrape all Senate trades filed over a certain period, use `scrape_senate_year()`. The arguments are the starting and ending date (format MM/DD/YYYY) and a version of Chromedriver that matches your installed version of Chrome:
 
 ```
-senate_2022 <- scrape_senate_year(start_date = '01/01/2022',
-                                  end_date = '12/31/2022',
-                                  chromedriver = '119.0.6045.159') # change to your version
+senate_2022 <- scrape_senate_all(start_date = '01/01/2022',
+                                 end_date = '12/31/2022',
+                                 chromedriver = '119.0.6045.159') # change to your version
 senate_2022
 ```
 
